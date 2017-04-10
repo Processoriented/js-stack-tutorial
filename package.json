@@ -6,12 +6,16 @@
   "author": "Vincent Engler(212033267)",
   "license": "MIT",
   "scripts": {
-    "start": "babel-node src",
+    "start": "yarn dev:start",
+    "dev:start": "nodemon --ignore lib --exec babel-node src/server",
     "test": "eslint src && flow && jest --coverage",
     "precommit": "yarn test",
     "prepush": "yarn test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.15.2"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.1",
@@ -27,6 +31,7 @@
     "eslint-plugin-react": "^6.9.0",
     "flow-bin": "^0.43.1",
     "husky": "^0.13.3",
-    "jest": "^19.0.2"
+    "jest": "^19.0.2",
+    "nodemon": "^1.11.0"
   }
 }
